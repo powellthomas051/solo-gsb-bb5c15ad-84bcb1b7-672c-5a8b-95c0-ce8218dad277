@@ -1,0 +1,12 @@
+services:
+  theater:
+    build: .
+    container_name: theater-rehearsal
+    ports:
+      - "8000:8000"
+    volumes:
+      - theater-data:/data
+    restart: unless-stopped
+
+volumes:
+  theater-data:

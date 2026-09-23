@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+data/
+*.db
+*.db-wal
+*.db-shm
+.venv/
+tests/__pycache__/
+tests/py_report.json
+tests/scenarios.json
+node_modules/

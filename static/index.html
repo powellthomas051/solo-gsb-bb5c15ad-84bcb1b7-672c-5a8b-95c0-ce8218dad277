@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>剧场排练 · 时序编排</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <h1>🎭 剧场排练 · 多人时序编排</h1>
+    <span class="spacer"></span>
+    <span class="pill">Lamport 时钟 · 版本向量 · 确定性合并</span>
+  </div>
+
+  <div class="container">
+    <h2>剧目列表</h2>
+
+    <div class="create-row">
+      <input id="new-name" type="text" placeholder="输入新剧目名称，例如：《雷雨》第三幕联排" maxlength="120" />
+      <button class="primary" id="btn-create">新建剧目</button>
+      <button id="btn-import-file">从 JSON 导入</button>
+      <input type="file" id="import-file" accept="application/json,.json" style="display:none" />
+    </div>
+
+    <div id="plays"></div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

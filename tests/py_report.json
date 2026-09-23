@@ -1,0 +1,143 @@
+{
+  "move_vs_delete": {
+    "scene_order": [
+      [
+        "s1",
+        1.0,
+        false
+      ]
+    ],
+    "cues": [
+      [
+        "q1",
+        "s1",
+        0.0,
+        5.0,
+        true
+      ]
+    ],
+    "conflicts": {
+      "cue:q1": {
+        "kinds": [
+          "move",
+          "remove"
+        ],
+        "winner": "a:3",
+        "n": 2
+      }
+    }
+  },
+  "two_concurrent_moves": {
+    "scene_order": [
+      [
+        "s1",
+        1.0,
+        false
+      ]
+    ],
+    "cues": [
+      [
+        "q1",
+        "s1",
+        40.0,
+        5.0,
+        false
+      ]
+    ],
+    "conflicts": {
+      "cue:q1": {
+        "kinds": [
+          "move"
+        ],
+        "winner": "c:1",
+        "n": 2
+      }
+    }
+  },
+  "causal_chain": {
+    "scene_order": [
+      [
+        "s1",
+        1.0,
+        false
+      ]
+    ],
+    "cues": [
+      [
+        "q1",
+        "s1",
+        40.0,
+        5.0,
+        false
+      ]
+    ],
+    "conflicts": {}
+  },
+  "restore": {
+    "scene_order": [
+      [
+        "s1",
+        1.0,
+        false
+      ]
+    ],
+    "cues": [
+      [
+        "q1",
+        "s1",
+        12.0,
+        5.0,
+        false
+      ]
+    ],
+    "conflicts": {}
+  },
+  "scene_reorder": {
+    "scene_order": [
+      [
+        "s3",
+        0.5,
+        false
+      ],
+      [
+        "s2",
+        2.0,
+        false
+      ],
+      [
+        "s1",
+        2.5,
+        false
+      ]
+    ],
+    "cues": [],
+    "conflicts": {}
+  },
+  "shuffle_dedup": {
+    "scene_order": [
+      [
+        "s1",
+        1.0,
+        false
+      ]
+    ],
+    "cues": [
+      [
+        "q1",
+        "s1",
+        40.0,
+        5.0,
+        false
+      ]
+    ],
+    "conflicts": {
+      "cue:q1": {
+        "kinds": [
+          "move"
+        ],
+        "winner": "c:1",
+        "n": 2
+      }
+    }
+  }
+}

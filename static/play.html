@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>排练时间线</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a href="/" title="返回剧目列表">←</a>
+    <h1 id="play-name">…</h1>
+    <button class="icon ghost" id="btn-rename" title="重命名">✎</button>
+    <span class="spacer"></span>
+
+    <span class="members" id="members"></span>
+
+    <span class="pill" id="status-pill">
+      <span class="status-dot offline" id="status-dot"></span><span id="status-text">连接中…</span>
+    </span>
+    <span class="pill badge-queue" id="queue-pill" style="display:none">离线队列 <b id="queue-n">0</b></span>
+    <span class="pill badge-conflict" id="conflict-pill" style="display:none">冲突 <b id="conflict-n">0</b></span>
+
+    <span class="zoom-ctl pill">
+      <button id="zoom-out" title="缩小">−</button>
+      <span class="val" id="zoom-val">12px/s</span>
+      <button id="zoom-in" title="放大">+</button>
+    </span>
+
+    <button id="btn-export">导出 JSON</button>
+    <button id="btn-import-file">导入 JSON</button>
+    <input type="file" id="import-file" accept="application/json,.json" style="display:none" />
+    <button class="ghost icon" id="btn-name" title="修改我的昵称">👤</button>
+  </div>
+
+  <div class="timeline-wrap">
+    <div class="timeline-scroll" id="scroll">
+      <div class="timeline" id="timeline">
+        <div class="ruler" id="ruler"></div>
+        <div id="scenes"></div>
+        <div class="empty-hint" id="empty" style="display:none">
+          还没有场次。点击下方「＋ 新增场次」开始编排；双击场次轨道可在该时间点添加动作/音效。
+        </div>
+      </div>
+    </div>
+
+    <div style="padding: 8px 16px; border-top: 1px solid var(--border); background: var(--panel); display:flex; gap:10px; align-items:center;">
+      <button class="primary" id="btn-add-scene">＋ 新增场次</button>
+      <span style="color: var(--muted); font-size:12px">
+        提示：拖拽色块移动时间 · 拖右边缘改时长 · 双击轨道空白添加 · 拖到别的场次行可跨场次移动 · 场次顺序用 ↑/↓ 调整
+      </span>
+    </div>
+
+    <div class="drawer" id="drawer" style="display:none">
+      <div class="drawer-head" id="drawer-head">
+        <b id="drawer-title">冲突与删除</b>
+        <span class="spacer" style="flex:1"></span>
+        <span id="drawer-count" style="color:var(--muted);font-size:12px"></span>
+      </div>
+      <div class="drawer-body" id="drawer-body"></div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/sync.js"></script>
+  <script src="/js/client.js"></script>
+  <script src="/js/play.js"></script>
+</body>
+</html>
